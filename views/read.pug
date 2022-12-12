@@ -1,0 +1,20 @@
+head
+  title= title
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='icon' href='/images/icon.png')
+  script(type='text/javascript', src='/javascripts/buttons.js', language='javascript')
+h2 Current Entries
+p 
+each str, i in String(message).split('\n')
+    if i > 0
+      br 
+      br
+      br
+    | #{str} 
+
+hr
+button.fill(type='button' onclick='returnHome()') return home
+br
+br
+hr
+//- input#returnbtn(type='button' value='Return home' onclick='returnHome()'

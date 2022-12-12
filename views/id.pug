@@ -1,0 +1,12 @@
+h1 Azure AD
+h3 ID Token
+table
+  tbody
+    each x in idTokenClaims
+        tr
+        td= key
+        td= x
+br
+a(href='https://aka.ms/id-tokens' target='_blank') Learn about claims in this ID token
+br
+a(href='/') Go back

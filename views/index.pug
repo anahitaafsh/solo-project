@@ -1,0 +1,83 @@
+head
+  title Simple NodeJS App
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='icon' href='/images/icon.png')
+  script(type='text/javascript', src='/javascripts/buttons.js', language='javascript')
+  
+h1 Simple NodeJS App
+  form#signup(action='/write' method='POST')
+    label(for='fname') First name:
+    br
+    input#fname(type='text' name='fname')
+    br
+    br
+    label(for='lname') Last name:
+    br
+    input#lname(type='text' name='lname')
+    br
+    br
+    label(for='email') Email:
+    br
+    input#email(type='text' name='email')
+    br
+    br
+    input(type='submit' value='Submit')
+    hr
+    button.fill(type='button' onclick='readEntries()') read entries
+
+if isAuthenticated 
+  h3 Welcome #{username}!
+  button.fill(type='button' onclick='viewClaims()') view ID token claims
+  //- input#btn(type='button' value='View ID Token Claims' onclick='viewClaims()')
+  br
+  br
+  button.fill(type='button' onclick='tokenClaims()') acquire token
+  //- input#btn(type='button' value='Acquire Token' onclick='tokenClaims()')
+  br
+  br
+  button.fill(type='button' onclick='signOut()') sign out
+  //- input#btn(type='button' value='Sign Out' onclick='signOut()')
+  br
+  br
+  form#signup(action='/write' method='POST')
+    label(for='fname') First name:
+    br
+    input#fname(type='text' name='fname')
+    br
+    br
+    label(for='lname') Last name:
+    br
+    input#lname(type='text' name='lname')
+    br
+    br
+    label(for='email') Email:
+    br
+    input#email(type='text' name='email')
+    br
+    br
+    input(type='submit' value='Submit')
+    hr
+    button.fill(type='button' onclick='readEntries()') read entries
+    //- input#btn(type='button' value='Read Entries' onclick='readEntries()')
+else 
+  button.fill(type='button' onclick='signIn()') sign in
+  //- input#btn(type='button' value='Sign In' onclick='signIn()')
+hr 
+h3 Project Steps
+#checklist
+  input(type='checkbox' checked='')
+  label Deploy to App Service
+  input(type='checkbox' checked='')
+  label Connect to SQL Database
+  input(type='checkbox' checked='')
+  label Read from SQL Database
+  input(type='checkbox' checked='')
+  label Write to SQL Database
+  input(type='checkbox' checked='')
+  label Read entries or submit new entry on same page
+  input(type='checkbox' checked='')
+  label Authenticate with Azure AD
+  input(type='checkbox')
+  label Restrict sign-in privileges based on account
+  input(type='checkbox')
+  label Integrate DevOps

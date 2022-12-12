@@ -1,0 +1,29 @@
+head
+  title= title
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='icon' href='/images/icon.png')
+  script(type='text/javascript', src='/javascripts/buttons.js', language='javascript')
+h2 Thanks for Submitting!
+p= output
+h3 Create another entry:
+form#signup(action='/write' method='POST')
+  label(for='fname') First name:
+  br
+  input#fname(type='text' name='fname')
+  br
+  br
+  label(for='lname') Last name:
+  br
+  input#lname(type='text' name='lname')
+  br
+  br
+  label(for='email') Email:
+  br
+  input#email(type='text' name='email')
+  br
+  br
+  input(type='submit' value='Submit')
+hr
+br
+button.fill(type='button' onclick='readEntries()') read entries
+//- input#btn(type='button' value='Read Entries' onclick='readEntries()')
